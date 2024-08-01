@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Update gist
-        uses: flovst/wakatime-sync@master
-        env:
+      # - name: Update gist
+        # uses: flovst/wakatime-sync@master
+      - env:
           TEST_ENV: test_env01
           T_S: ${{ secrets.TEST_SECRET }}
           T_V: ${{ vars.TEST_VARIABLE }}
-        run: pwd
+      - run: pwd
       # - run: |
       #   pwd
       #   ls
