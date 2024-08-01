@@ -32,7 +32,7 @@ jobs:
 
       - run: echo "${{ vars.TEST_VARIABLE }}"  
       - run: echo "${{ env.TEST_ENV }}"  
-      - run: echo $GITHUB_ENV
+      # - run: echo $GITHUB_ENV
       - run: echo "variable from shell environment : $env_var"
       # - run: |
       #   pwd
