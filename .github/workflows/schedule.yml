@@ -14,7 +14,7 @@ jobs:
           TEST_ENV: test_env01
           T_S: ${{ secrets.TEST_SECRET }}
           T_V: ${{ vars.TEST_VARIABLE }}
-      - run: |
+        run: |
         pwd
         ls
         printf "${{secrets.TEST_SECRET}}"
