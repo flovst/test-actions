@@ -16,11 +16,11 @@ jobs:
 
   test01:
     runs-on: ubuntu-latest
+    env:  
+      TEST_ENV: test_env01
+      T_S: ${{ secrets.TEST_SECRET }}
+      T_V: ${{ vars.TEST_VARIABLE }}
     steps:
-      - env:  
-          TEST_ENV: test_env01
-          T_S: ${{ secrets.TEST_SECRET }}
-          T_V: ${{ vars.TEST_VARIABLE }}
       - run: echo $SHELL
       - uses: actions/checkout@v4
       - run: pwd
