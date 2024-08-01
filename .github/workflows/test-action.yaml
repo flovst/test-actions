@@ -30,6 +30,7 @@ jobs:
 
       - run: echo "${{ vars.TEST_VARIABLE }}"  
       - run: echo "${{ env.TEST_ENV }}"  
+      - run: $GITHUB_ENV
       # - run: |
       #   pwd
       #   ls
