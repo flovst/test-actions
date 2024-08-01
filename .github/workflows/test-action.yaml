@@ -18,14 +18,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: pwd
       - name: Testing Env 
-        run: pwd
         env:
           TEST_ENV: test_env01
           T_S: ${{ secrets.TEST_SECRET }}
           T_V: ${{ vars.TEST_VARIABLE }}
         run: echo "${{ TEST_ENV }}"  
-        run: echo "${{ secrets.TEST_SECRET }}"
+        # run: echo "${{ secrets.TEST_SECRET }}"
 
       - run: pwd
       - run: echo "${{ TEST_ENV }}"  
