@@ -26,10 +26,10 @@ jobs:
           T_V: ${{ vars.TEST_VARIABLE }}
         run: echo "${{ TEST_ENV }}"  
         run: echo "${{ secrets.TEST_SECRET }}"
-      - name: Echo env
-        run: pwd
-        run: echo "${{ TEST_ENV }}"  
-        run: echo "${{ secrets.TEST_SECRET }}"
+
+      - run: pwd
+      - run: echo "${{ TEST_ENV }}"  
+      - run: echo "${{ secrets.TEST_SECRET }}"
       # - run: |
       #   pwd
       #   ls
