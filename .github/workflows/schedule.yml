@@ -7,14 +7,20 @@ jobs:
   update-gist:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
       - name: Update gist
         uses: flovst/wakatime-sync@master
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GIST_ID: ${{ secrets.GIST_ID}}
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          SCU_KEY: ${{ secrets.SCU_KEY }}
+          TEST_ENV: test_env01
+          T_S: ${{ secrets.TEST_SECRET }}
+          T_V: ${{ vars.TEST_VARIABLE }}
+      - run: |
+        pwd
+        ls
+        printf "${{secrets.TEST_SECRET}}"
+        printf "${{vars.TEST_VARIABLE}}"
+        printf "${{T_S}}"
+        printf "${{T_V}}"
 
   test01:
     runs-on: ubuntu-latest
