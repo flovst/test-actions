@@ -17,9 +17,10 @@ jobs:
   test01:
     runs-on: ubuntu-latest
     steps:
-      - run: pwd
       - uses: actions/checkout@v4
-      - env:
+      - name: Testing Env 
+        run: pwd
+        env:
           TEST_ENV: test_env01
           T_S: ${{ secrets.TEST_SECRET }}
           T_V: ${{ vars.TEST_VARIABLE }}
