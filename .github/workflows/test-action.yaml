@@ -28,7 +28,7 @@ jobs:
         # run: echo "${{ secrets.TEST_SECRET }}"
 
       - run: pwd
-      - run: echo "${{ TEST_ENV }}"  
+      - run: echo "${{ env.TEST_ENV }}"  
       - run: echo "${{ secrets.TEST_SECRET }}"
       # - run: |
       #   pwd
