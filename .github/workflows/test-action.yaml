@@ -29,7 +29,7 @@ jobs:
         # run: echo "${{ vars.TEST_VARIABLE }}"
 
       - run: echo "${{ vars.TEST_VARIABLE }}"  
-      - run: echo "${{ env.T_V }}"  
+      - run: echo "${{ env.TEST_ENV }}"  
       # - run: |
       #   pwd
       #   ls
