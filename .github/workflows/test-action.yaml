@@ -1,5 +1,7 @@
 name: test-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
+env: 
+  env_var: ${{ vars.ENV_CONTEXT_VAR }}
 on: 
   push:
   workflow_dispatch:
@@ -30,7 +32,8 @@ jobs:
 
       - run: echo "${{ vars.TEST_VARIABLE }}"  
       - run: echo "${{ env.TEST_ENV }}"  
-      - run: $GITHUB_ENV
+      - run: echo $GITHUB_ENV
+      - run: echo "variable from shell environment : $env_var"
       # - run: |
       #   pwd
       #   ls
