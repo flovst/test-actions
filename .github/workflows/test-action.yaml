@@ -24,8 +24,8 @@ jobs:
           TEST_ENV: test_env01
           T_S: ${{ secrets.TEST_SECRET }}
           T_V: ${{ vars.TEST_VARIABLE }}
-        # run: echo "${{ env.TEST_ENV }}"  
-        run: echo "${{ vars.TEST_VARIABLE }}"
+        run: echo "${{ env.T_V }}"  
+        # run: echo "${{ vars.TEST_VARIABLE }}"
 
       - run: pwd
       - run: echo "${{ env.TEST_ENV }}"  
