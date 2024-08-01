@@ -4,31 +4,32 @@ on:
   # push:
   workflow_dispatch:
 jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - run: npm install -g bats
-      - run: bats -v
+  # check-bats-version:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: '20'
+  #     - run: npm install -g bats
+  #     - run: bats -v
 
   test01:
     runs-on: ubuntu-latest
     steps:
+      - env:  
+          TEST_ENV: test_env01
+          T_S: ${{ secrets.TEST_SECRET }}
+          T_V: ${{ vars.TEST_VARIABLE }}
       - run: echo $SHELL
       - uses: actions/checkout@v4
       - run: pwd
       - name: Testing Env 
-        env:
-          TEST_ENV: test_env01
-          T_S: ${{ secrets.TEST_SECRET }}
-          T_V: ${{ vars.TEST_VARIABLE }}
         run: echo "${{ vars.TEST_VARIABLE }}"  
         # run: echo "${{ vars.TEST_VARIABLE }}"
 
-      - run: echo "${{vars.TEST_VARIABLE}}"  
+      - run: echo "${{ vars.TEST_VARIABLE }}"  
+      - run: echo "${{ env.T_V }}"  
       # - run: |
       #   pwd
       #   ls
