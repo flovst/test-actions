@@ -37,7 +37,3 @@ jobs:
       # - run: |
       #   pwd
       #   ls
-      #   printf "${{secrets.TEST_SECRET}}"
-      #   printf "${{vars.TEST_VARIABLE}}"
-      #   printf "${{T_S}}"
-      #   printf "${{T_V}}"
